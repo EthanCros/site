@@ -1,5 +1,5 @@
 body {
-    background-color: brown;
+    background: url('images/background.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,3 +37,4 @@ button:active {
     background-color: #cc9900;
     transform: scale(0.95);
 }
+
