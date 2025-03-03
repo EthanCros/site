@@ -32,34 +32,45 @@
             color: black;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        button :active {
+        button:active {
             background-color: #910918 !important;
         }
     </style>
 </head>
 <body>
-    <img id="randomImage" src="image1.jpg" alt="Random Image">
-    <button id="changeButton" onclick="changeImage()">Change Image</button>
+
+    <img id="image" src="image1.jpg" alt="Random Image">
+    <button id="changeButton">Change Image</button>
 
     <script>
-        function changeImage() {
+        document.addEventListener("DOMContentLoaded", function() {
+            const button = document.getElementById("changeButton");
+            const image = document.getElementById("image");
             const images = [
-                "image1.jpg", "image2.jpg", "image3.jpg", 
-                "image4.jpg", "image5.jpg"
+                "image1.jpg",
+                "image2.jpg",
+                "image3.jpg",
+                "image4.jpg",
+                "image5.jpg",
+                "image6.jpg",
+                "image7.jpg",
+                "image8.jpg",
+                "image9.jpg",
+                "image10.jpg"
             ];
-            const randomIndex = Math.floor(Math.random() * images.length);
-            document.getElementById("randomImage").src = images[randomIndex];
-
-            document.addEventListener("DOMContentLoaded", function() {
-                const button = document.getElementById("changeButton");
-                const names = ["Next", "Go!", "Click Me!", "Surprise", "Try Again", "Random", "Change", "New One"];
+            const names = ["Next", "Go!", "Click Me!", "Surprise", "Try Again", "Random", "Change", "New One"];
 
             button.addEventListener("click", function() {
-                const randomIndex = Math.floor(Math.random() * names.length);
-            button.textContent = names[randomIndex];
+                // Change image randomly
+                const randomImageIndex = Math.floor(Math.random() * images.length);
+                image.src = images[randomImageIndex];
+
+                // Change button text randomly
+                const randomNameIndex = Math.floor(Math.random() * names.length);
+                button.textContent = names[randomNameIndex];
+            });
         });
-    });
-        }
     </script>
+
 </body>
 </html>
